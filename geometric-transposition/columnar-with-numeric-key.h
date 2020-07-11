@@ -33,13 +33,13 @@ void columnarWithNumericKey(char text[], char key[]){
         }
     }
 
-    int l=0;
+    int k=0;
     for(int value=1; value<=lengthKey; value++){
-        for(int k=0; k<lengthKey; k++){
-            if(positions[k]==value){
-                for(int i=0, j=k; i<linesCount; i++){
+        for(int l=0; l<lengthKey; l++){
+            if(positions[l]==value){
+                for(int i=0, j=l; i<linesCount; i++){
                     if(matrix[i][j] != '-'){
-                        auxText[l++] = matrix[i][j];
+                        auxText[k++] = matrix[i][j];
                     }
                 }
                 break;
@@ -47,7 +47,7 @@ void columnarWithNumericKey(char text[], char key[]){
         }
     }
 
-    auxText[l] = '\0';
+    auxText[k] = '\0';
     
     strcpy(text, auxText);
 }
