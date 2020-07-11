@@ -1,5 +1,4 @@
 #include <string.h>
-#include <stdio.h>
 
 void columnarWithNumericKey(char text[], char key[]){
     int lengthText = strlen(text), lengthKey = strlen(key);
