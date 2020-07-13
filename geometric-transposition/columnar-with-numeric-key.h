@@ -7,7 +7,7 @@ void columnarWithNumericKey(char text[], char key[]){
 
     int linesCount, columnsCount = lengthKey;
 
-    for(int upper=65, lower=97, value=1; upper<=90, lower<=122; upper++, lower++){
+    for(int upper=65, lower=97, value=1; upper<=90 && lower<=122; upper++, lower++){
         for(int i=0; i<lengthKey; i++){
             if(key[i]==upper || key[i]==lower){
                 positions[i] = value++;
