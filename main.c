@@ -6,6 +6,7 @@
 #include "geometric-transposition/columnar-with-numeric-key.h"
 #include "geometric-transposition/by-itinerary.h"
 #include "geometric-transposition/triangular.h"
+#include "geometric-transposition/spiral.h"
 
 #include <stdlib.h>
 #include <stdarg.h>
@@ -39,6 +40,7 @@ int main(){
         printf("3 - Columnar with Numeric Key\n");
         printf("4 - by Itinerary\n");
         printf("5 - Triangular\n");
+        printf("6 - Spiral\n");
         printf("0 - Exit\n");
         printf("OPTION: ");
         scanf("%i", &option);
@@ -78,6 +80,12 @@ int main(){
                 printf("Triangular\n");
                 triangular(text);
                 break;
+
+            case 6:
+                printf("Spiral\n");
+                spiral(text);
+                break;
+
             case 0:
                 printf("Exiting...\n");
                 break;
@@ -102,7 +110,7 @@ int main(){
 //minha terra tem palmeiras onde canta o sabia
 
 // for(int i=0; i<linesCount; i++){
-//     for(int j=0; j<columnCount; j++){
+//     for(int j=0; j<columnsCount; j++){
 //         printf("%c ", matrix[i][j]);
 //     }
 //     printf("\n");
