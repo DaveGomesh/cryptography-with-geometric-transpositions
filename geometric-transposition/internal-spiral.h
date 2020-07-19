@@ -1,9 +1,7 @@
 #include <string.h>
 #include <math.h>
 
-#include <stdio.h>
-
-void spiral(char text[]){
+void internalSpiral(char text[]){
     int lengthText = strlen(text);
     char auxText[lengthText];
 
@@ -16,6 +14,14 @@ void spiral(char text[]){
         linesCount++;
     }
 
+    if(linesCount%2==0){
+        linesCount++;
+    }
+
+    if(columnsCount%2==0){
+        columnsCount++;
+    }
+
     char matrix[linesCount][columnsCount];
 
     for(int i=0; i<linesCount; i++){
@@ -24,42 +30,71 @@ void spiral(char text[]){
         }
     }
 
-    int i=0, j=0, k=0;
+    int verticalMiddle = (linesCount - 1) / 2;
+    int horizontalMiddle = (columnsCount - 1) / 2;
+
+    int i=verticalMiddle, j=horizontalMiddle, k=0;
     char state = 'r'; //u = up, r = right, d = down, l = left
 
-    // The first position is the limit in the up, and the second position is the limit in the bottom
-    int verticalLimit[2]={1, linesCount-1};
-    // The first position is the limit in the left, and the second position is the limit in the right
-    int horizontalLimit[2]={0, columnsCount-1};
+    //The first position is the limit in the up, and the second position is the limit in the bottom
+    int verticalLimit[2] = {verticalMiddle-1, verticalMiddle+1};
+    //The first position is the limit in the left, and the second position is the limit in the right
+    int horizontalLimit[4] = {horizontalMiddle-1, horizontalMiddle+1, 1, 1};
+
     while(k<lengthText){
         switch(state){
             case 'r':
                 while(j<=horizontalLimit[1] && k<lengthText){
                     matrix[i][j++] = text[k++];
                 }
-                j--;
+
                 i++;
-                horizontalLimit[1]--;
+                j--;
+                horizontalLimit[1]++;
+
+                if(horizontalLimit[1] == columnsCount){
+                    horizontalLimit[1]--;
+
+                    if(horizontalLimit[3] == 1){
+                        horizontalLimit[3]=0;
+                    }else{
+                        i = verticalLimit[1];
+                        state = 'l';
+                    }
+                }
+
                 state = 'd';
                 break;
-            
+
             case 'd':
                 while(i<=verticalLimit[1] && k<lengthText){
                     matrix[i++][j] = text[k++];
                 }
                 i--;
                 j--;
-                verticalLimit[1]--;
+                verticalLimit[1]++;
                 state = 'l';
                 break;
-            
+
             case 'l':
                 while(j>=horizontalLimit[0] && k<lengthText){
                     matrix[i][j--] = text[k++];
                 }
                 j++;
                 i--;
-                horizontalLimit[0]++;
+                horizontalLimit[0]--;
+
+                if(horizontalLimit[0] == -1){
+                    horizontalLimit[0]++;
+
+                    if(horizontalLimit[2] == 1){
+                        horizontalLimit[2]=0;
+                    }else{
+                        i = verticalLimit[0];
+                        state = 'r';
+                    }
+                }
+
                 state = 'u';
                 break;
 
@@ -69,26 +104,26 @@ void spiral(char text[]){
                 }
                 i++;
                 j++;
-                verticalLimit[0]++;
+                verticalLimit[0]--;
                 state = 'r';
                 break;
         }
     }
 
     k=0;
-    int currentLine = 0, currentColumn = 1;
+    int currentLine = linesCount-1, currentColumn = 1;
     while(k<lengthText){
         
-        if(currentLine < linesCount){
-            for(i=currentLine, j=0; i>=0 && j < columnsCount; i--, j++){
+        if(currentLine >= 0){
+            for(i=currentLine, j=0; i<linesCount && j < columnsCount; i++, j++){
                 if(matrix[i][j] != '-'){
                     auxText[k++] = matrix[i][j];
                 }
             }
-            currentLine++;
+            currentLine--;
         }
         else{
-            for(i=currentLine-1, j=currentColumn; j<columnsCount; i--, j++){
+            for(i=0, j=currentColumn; j<columnsCount; i++, j++){
                 if(matrix[i][j] != '-'){
                     auxText[k++] = matrix[i][j];
                 }

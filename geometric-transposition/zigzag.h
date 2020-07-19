@@ -1,8 +1,6 @@
 #include <string.h>
 #include <math.h>
 
-#include <stdio.h>
-
 void zigzag(char text[]){
     int lengthText = strlen(text);
     char auxText[lengthText];

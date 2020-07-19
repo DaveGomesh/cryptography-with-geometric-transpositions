@@ -6,7 +6,8 @@
 #include "geometric-transposition/columnar-with-numeric-key.h"
 #include "geometric-transposition/by-itinerary.h"
 #include "geometric-transposition/triangular.h"
-#include "geometric-transposition/spiral.h"
+#include "geometric-transposition/external-spiral.h"
+#include "geometric-transposition/internal-spiral.h"
 #include "geometric-transposition/zigzag.h"
 
 #include <stdlib.h>
@@ -41,8 +42,9 @@ int main(){
         printf("3 - Columnar with Numeric Key\n");
         printf("4 - by Itinerary\n");
         printf("5 - Triangular\n");
-        printf("6 - Spiral\n");
-        printf("7 - Zigzag\n");
+        printf("6 - External Spiral\n");
+        printf("7 - Internal Spiral\n");
+        printf("8 - Zigzag\n");
         printf("0 - Exit\n");
         printf("OPTION: ");
         scanf("%i", &option);
@@ -78,17 +80,23 @@ int main(){
                 scanf("%i", &linesCount);
                 byItinerary(text,linesCount);
                 break;
+
             case 5:
                 printf("Triangular\n");
                 triangular(text);
                 break;
 
             case 6:
-                printf("Spiral\n");
-                spiral(text);
+                printf("External Spiral\n");
+                externalSpiral(text);
+                break;
+
+            case 7:
+                printf("Internal Spiral\n");
+                internalSpiral(text);
                 break;
             
-            case 7:
+            case 8:
                 printf("Zigzag\n");
                 zigzag(text);
                 break;
@@ -114,7 +122,12 @@ int main(){
 }
 
 //os rapazes sao capazes
+
 //minha terra tem palmeiras onde canta o sabia
+
+//estou testando um texto maior para melhor compreensao, ainda maior do que o texto que diz que eu sou o lider
+
+//Revelado pelo Santos, em 2009, Neymar se tornou o principal futebolista em atividade no país. Em 2013, foi vendido ao Barcelona em alta,[13] após ser protagonista da conquista da Copa das Confederações FIFA 2013 pela Seleção Brasileira.[14][15] Ao lado de Messi, Iniesta, Xavi, Daniel Alves e Luis Suárez, conquistou a Liga dos Campeões da UEFA de 2014–15 e se transformou no principal futebolista brasileiro e um dos principais futebolistas do mundo.[16] Em 2015, foi finalista do prêmio Bola de Ouro da FIFA (melhor jogador do mundo).[17] Em 2017, se tornou a transferência mais cara da história do futebol mundial, com sua venda milionária ao Paris Saint-Germain por 222 milhões de euros.[18] Nesse mesmo ano, foi pela segunda vez na carreira um dos três finalistas da premiação da FIFA de melhor jogador do mundo, atualmente nomeada como The Best FIFA Football Awards ou apenas FIFA The Best. Também foi finalista pela revista France Football, responsável pela entrega do Ballon d'Or ou Bola de Ouro.
 
 // for(int i=0; i<linesCount; i++){
 //     for(int j=0; j<columnsCount; j++){
@@ -122,3 +135,8 @@ int main(){
 //     }
 //     printf("\n");
 // }
+
+//printf("Matrix Sizes: %i x %i\n", linesCount, columnsCount);
+// printf("Current Indexes: %i x %i\n", i, j);
+// printf("Limits: up=%i, right=%i, down=%i, left=%i\n", verticalLimit[0], horizontalLimit[1], verticalLimit[1], horizontalLimit[0]);
+// printf("\n");
