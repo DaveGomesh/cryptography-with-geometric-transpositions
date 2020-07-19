@@ -4,7 +4,7 @@
 void internalSpiral(char text[]){
     int lengthText = strlen(text);
     char auxText[lengthText];
-
+    
     int linesCount, columnsCount;
 
     int squareRootLengthText = (int)sqrt(lengthText);
@@ -14,12 +14,21 @@ void internalSpiral(char text[]){
         linesCount++;
     }
 
-    if(linesCount%2==0){
-        linesCount++;
+    if(linesCount < columnsCount){
+        linesCount = columnsCount;
+    }
+    else if(columnsCount < linesCount){
+        columnsCount = linesCount;
     }
 
-    if(columnsCount%2==0){
+    if(linesCount%2==0){
+        linesCount++;
         columnsCount++;
+    }
+
+    if((linesCount - 2)*(columnsCount-2) >= lengthText){
+        linesCount -= 2;
+        columnsCount -= 2;
     }
 
     char matrix[linesCount][columnsCount];
@@ -39,7 +48,7 @@ void internalSpiral(char text[]){
     //The first position is the limit in the up, and the second position is the limit in the bottom
     int verticalLimit[2] = {verticalMiddle-1, verticalMiddle+1};
     //The first position is the limit in the left, and the second position is the limit in the right
-    int horizontalLimit[4] = {horizontalMiddle-1, horizontalMiddle+1, 1, 1};
+    int horizontalLimit[2] = {horizontalMiddle-1, horizontalMiddle+1};
 
     while(k<lengthText){
         switch(state){
@@ -51,18 +60,6 @@ void internalSpiral(char text[]){
                 i++;
                 j--;
                 horizontalLimit[1]++;
-
-                if(horizontalLimit[1] == columnsCount){
-                    horizontalLimit[1]--;
-
-                    if(horizontalLimit[3] == 1){
-                        horizontalLimit[3]=0;
-                    }else{
-                        i = verticalLimit[1];
-                        state = 'l';
-                    }
-                }
-
                 state = 'd';
                 break;
 
@@ -70,6 +67,7 @@ void internalSpiral(char text[]){
                 while(i<=verticalLimit[1] && k<lengthText){
                     matrix[i++][j] = text[k++];
                 }
+
                 i--;
                 j--;
                 verticalLimit[1]++;
@@ -80,21 +78,10 @@ void internalSpiral(char text[]){
                 while(j>=horizontalLimit[0] && k<lengthText){
                     matrix[i][j--] = text[k++];
                 }
+
                 j++;
                 i--;
                 horizontalLimit[0]--;
-
-                if(horizontalLimit[0] == -1){
-                    horizontalLimit[0]++;
-
-                    if(horizontalLimit[2] == 1){
-                        horizontalLimit[2]=0;
-                    }else{
-                        i = verticalLimit[0];
-                        state = 'r';
-                    }
-                }
-
                 state = 'u';
                 break;
 
@@ -102,6 +89,7 @@ void internalSpiral(char text[]){
                 while(i>=verticalLimit[0] && k<lengthText){
                     matrix[i--][j] = text[k++];
                 }
+
                 i++;
                 j++;
                 verticalLimit[0]--;
