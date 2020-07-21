@@ -9,9 +9,10 @@
 #include "geometric-transposition/external-spiral.h"
 #include "geometric-transposition/internal-spiral.h"
 #include "geometric-transposition/zigzag.h"
+#include "geometric-transposition/l-pattern.h"
 
 #include <stdlib.h>
-#include <stdarg.h>
+#include <stdarg.h> 
 
 void variableArgs(int num, ...){
     va_list args;
@@ -45,6 +46,7 @@ int main(){
         printf("6 - External Spiral\n");
         printf("7 - Internal Spiral\n");
         printf("8 - Zigzag\n");
+        printf("9 - 'L' Pattern\n");
         printf("0 - Exit\n");
         printf("OPTION: ");
         scanf("%i", &option);
@@ -100,6 +102,11 @@ int main(){
                 printf("Zigzag\n");
                 zigzag(text);
                 break;
+            
+            case 9:
+                printf("'L' Pattern\n");
+                lPattern(text);
+                break;
 
             case 0:
                 printf("Exiting...\n");
@@ -140,3 +147,8 @@ int main(){
 // printf("Current Indexes: %i x %i\n", i, j);
 // printf("Limits: up=%i, right=%i, down=%i, left=%i\n", verticalLimit[0], horizontalLimit[1], verticalLimit[1], horizontalLimit[0]);
 // printf("\n");
+
+//Print ASCII Table
+// for(int i=0; i<256; i++){
+//     printf("Decimal Code: %i\t Character: %c\n", i, i);
+// }
