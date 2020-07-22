@@ -16,6 +16,12 @@ void lPattern(char text[]){
 
     char matrix[linesCount][columnsCount];
 
+    for(int i=0; i<linesCount; i++){
+        for(int j=0; j<columnsCount; j++){
+            matrix[i][j] = '-';
+        }
+    }
+
     int i=0, j=0, k=0;
     char state = 'd'; //u = up, r = right, d = down, l = left
 
@@ -154,6 +160,13 @@ void lPattern(char text[]){
                 break;
         }
     }
+
+    for(int i=0; i<linesCount; i++){
+    for(int j=0; j<columnsCount; j++){
+        printf("%c ", matrix[i][j]);
+    }
+    printf("\n");
+}
 
     auxText[k] = '\0';
 

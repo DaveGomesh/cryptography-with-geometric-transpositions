@@ -1,14 +1,14 @@
 #include <stdio.h>
 
-#include "geometric-transposition/simple-columnar.h"
-#include "geometric-transposition/simple-linear.h"
-#include "geometric-transposition/columnar-with-numeric-key.h"
-#include "geometric-transposition/by-itinerary.h"
-#include "geometric-transposition/triangular.h"
-#include "geometric-transposition/external-spiral.h"
-#include "geometric-transposition/internal-spiral.h"
-#include "geometric-transposition/zigzag.h"
-#include "geometric-transposition/l-pattern.h"
+#include "geometric-transpositions/simple-columnar.h"
+#include "geometric-transpositions/simple-linear.h"
+#include "geometric-transpositions/columnar-with-numeric-key.h"
+#include "geometric-transpositions/by-itinerary.h"
+#include "geometric-transpositions/triangular.h"
+#include "geometric-transpositions/external-spiral.h"
+#include "geometric-transpositions/internal-spiral.h"
+#include "geometric-transpositions/zigzag.h"
+#include "geometric-transpositions/l-pattern.h"
 
 #include "string-processings/remove-invalid-characters.h"
 #include "string-processings/replace-equivalent-characters.h"
