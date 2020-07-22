@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-#include "geometric-transposition/process-strings.h"
 #include "geometric-transposition/simple-columnar.h"
 #include "geometric-transposition/simple-linear.h"
 #include "geometric-transposition/columnar-with-numeric-key.h"
@@ -10,6 +9,11 @@
 #include "geometric-transposition/internal-spiral.h"
 #include "geometric-transposition/zigzag.h"
 #include "geometric-transposition/l-pattern.h"
+
+#include "string-processings/remove-invalid-characters.h"
+#include "string-processings/replace-equivalent-characters.h"
+#include "string-processings/to-lowercase.h"
+#include "string-processings/to-uppercase.h"
 
 #include <stdlib.h>
 #include <stdarg.h> 
@@ -35,7 +39,13 @@ int main(){
 
         printf("Insert the text: ");
         fgets(text, 100000, stdin);
+
         removeInvalidCharacters(text);
+        replaceEquivalentCharacters(text);
+        // toLowercase(text);
+        toUppercase(text);
+
+        printf("Text: %s\n", text);
 
         printf("\nChoose encryption:\n");
         printf("1 - Simple Columnar\n");
@@ -127,6 +137,8 @@ int main(){
 
     return 0;
 }
+
+//AaÄäÅåÁáÂâÀàÃãBbCcÇçDdEeÉéÊêËëÈèFfGgHhIiÍíÎîÏïÌìıJjKkLlMmNnÑñOoÖöÓóÔôÒòÕõPpQqRrSsTtUuÜüÚúÛûÙùVvWwXxYyÝýÿZz
 
 //os rapazes sao capazes
 
