@@ -161,13 +161,6 @@ void lPattern(char text[]){
         }
     }
 
-    for(int i=0; i<linesCount; i++){
-    for(int j=0; j<columnsCount; j++){
-        printf("%c ", matrix[i][j]);
-    }
-    printf("\n");
-}
-
     auxText[k] = '\0';
 
     strcpy(text, auxText);
