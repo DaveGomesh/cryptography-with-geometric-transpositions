@@ -32,7 +32,7 @@ void variableArgs(int num, ...){
 int main(){
     int option;
     int linesCount, columnsCount;
-    char text[100000], key[550];
+    char text[100000], textForEncrypt[100000], key[550];
 
     do{
         printf("Cryptography with Geometric Transposition\n\n");
@@ -45,7 +45,9 @@ int main(){
         // toLowercase(text);
         toUppercase(text);
 
-        printf("Text: %s\n", text);
+        strcpy(textForEncrypt, text);
+
+        printf("Text: %s\n", textForEncrypt);
 
         printf("\nChoose encryption:\n");
         printf("1 - Simple Columnar\n");
@@ -69,53 +71,53 @@ int main(){
                 printf("Simple Columnar\n");
                 printf("Number of columns: ");
                 scanf("%i", &columnsCount);
-                simpleColumnar(text, columnsCount);
+                simpleColumnar(textForEncrypt, columnsCount);
                 break;
             
             case 2:
                 printf("Simple Linear\n");
                 printf("Number of lines: ");
                 scanf("%i", &linesCount);
-                simpleLinear(text, linesCount);
+                simpleLinear(textForEncrypt, linesCount);
                 break;
 
             case 3:
                 printf("Columnar with Numeric Key\n");
                 printf("Enter the key: ");
                 fgets(key, 550, stdin);
-                columnarWithNumericKey(text, key);
+                columnarWithNumericKey(textForEncrypt, key);
                 break;
 
             case 4:
                 printf("by Itinerary\n");
                 printf("Number of lines: ");
                 scanf("%i", &linesCount);
-                byItinerary(text,linesCount);
+                byItinerary(textForEncrypt,linesCount);
                 break;
 
             case 5:
                 printf("Triangular\n");
-                triangular(text);
+                triangular(textForEncrypt);
                 break;
 
             case 6:
                 printf("External Spiral\n");
-                externalSpiral(text);
+                externalSpiral(textForEncrypt);
                 break;
 
             case 7:
                 printf("Internal Spiral\n");
-                internalSpiral(text);
+                internalSpiral(textForEncrypt);
                 break;
             
             case 8:
                 printf("Zigzag\n");
-                zigzag(text);
+                zigzag(textForEncrypt);
                 break;
             
             case 9:
                 printf("'L' Pattern\n");
-                lPattern(text);
+                lPattern(textForEncrypt);
                 break;
 
             case 0:
@@ -129,7 +131,15 @@ int main(){
 
         setbuf(stdin, NULL);
 
-        printf("Result: %s\n\n", text);
+        printf("Result: %s\n\n", textForEncrypt);
+
+        FILE * f_ResultEncryption = fopen("result-ecryption.txt", "w");
+
+        fprintf(f_ResultEncryption, textForEncrypt);
+
+        fclose(f_ResultEncryption);
+
+
         system("pause");
         system("cls");
 
