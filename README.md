@@ -1,2 +1,2 @@
-# cryptography-with-geometric-transposition
- Some encryptions using Geometric Transpositions.
+# Cryptography with Geometric Transpositions
+Some encryptions using Geometric Transpositions.
