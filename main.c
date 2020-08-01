@@ -30,120 +30,161 @@ void variableArgs(int num, ...){
 }
 
 int main(){
-    int option;
+    int option, error;
     int linesCount, columnsCount;
     char text[100000], textForEncrypt[100000], key[550];
 
     do{
+        error = 0;
+        system("cls");
+
         printf("Cryptography with Geometric Transposition\n\n");
 
-        printf("Insert the text: ");
-        fgets(text, 100000, stdin);
-
-        removeInvalidCharacters(text);
-        replaceEquivalentCharacters(text);
-        // toLowercase(text);
-        toUppercase(text);
-
-        strcpy(textForEncrypt, text);
-
-        printf("Text: %s\n", textForEncrypt);
-
-        printf("\nChoose encryption:\n");
-        printf("1 - Simple Columnar\n");
-        printf("2 - Simple Linear\n");
-        printf("3 - Columnar with Numeric Key\n");
-        printf("4 - by Itinerary\n");
-        printf("5 - Triangular\n");
-        printf("6 - External Spiral\n");
-        printf("7 - Internal Spiral\n");
-        printf("8 - Zigzag\n");
-        printf("9 - 'L' Pattern\n");
-        printf("0 - Exit\n");
+        printf("1 - Type the Text\n");
+        printf("2 - Use the File\n");
+        
         printf("OPTION: ");
         scanf("%i", &option);
         setbuf(stdin, NULL);
 
-        printf("\n");
-
         switch (option){
             case 1:
-                printf("Simple Columnar\n");
-                printf("Number of columns: ");
-                scanf("%i", &columnsCount);
-                simpleColumnar(textForEncrypt, columnsCount);
+                printf("Insert the text: ");
+                fgets(text, 100000, stdin);
                 break;
             
-            case 2:
-                printf("Simple Linear\n");
-                printf("Number of lines: ");
-                scanf("%i", &linesCount);
-                simpleLinear(textForEncrypt, linesCount);
-                break;
+            case 2:;
+                FILE * f_OriginalText = fopen("original-text.txt", "r");
 
-            case 3:
-                printf("Columnar with Numeric Key\n");
-                printf("Enter the key: ");
-                fgets(key, 550, stdin);
-                columnarWithNumericKey(textForEncrypt, key);
-                break;
+                if(f_OriginalText == NULL){
+                    f_OriginalText = fopen("original-text.txt", "w");
+                    fclose(f_OriginalText);
 
-            case 4:
-                printf("by Itinerary\n");
-                printf("Number of lines: ");
-                scanf("%i", &linesCount);
-                byItinerary(textForEncrypt,linesCount);
-                break;
+                    printf("\nThe 'original-text.txt' file not found!\n");
+                    printf("An empty file has been created!\n\n");
 
-            case 5:
-                printf("Triangular\n");
-                triangular(textForEncrypt);
-                break;
+                    error = 1;
+                    system("pause");
+                    break;
+                }
 
-            case 6:
-                printf("External Spiral\n");
-                externalSpiral(textForEncrypt);
-                break;
+                fgets(text, 100000, f_OriginalText);
 
-            case 7:
-                printf("Internal Spiral\n");
-                internalSpiral(textForEncrypt);
+                fclose(f_OriginalText);
                 break;
             
-            case 8:
-                printf("Zigzag\n");
-                zigzag(textForEncrypt);
-                break;
-            
-            case 9:
-                printf("'L' Pattern\n");
-                lPattern(textForEncrypt);
-                break;
-
-            case 0:
-                printf("Exiting...\n");
-                break;
-
             default:
-                printf("Invalid option!!!\n");
+                error = 1;
+                printf("Invalid Option!\n\n");
+                system("pause");
                 break;
         }
 
-        setbuf(stdin, NULL);
+        if(error == 0){
+            removeInvalidCharacters(text);
+            replaceEquivalentCharacters(text);
+            // toLowercase(text);
+            // toUppercase(text);
 
-        printf("Result: %s\n\n", textForEncrypt);
+            strcpy(textForEncrypt, text);
 
-        FILE * f_ResultEncryption = fopen("result-ecryption.txt", "w");
+            printf("Text: %s\n", textForEncrypt);
 
-        fprintf(f_ResultEncryption, textForEncrypt);
+            printf("\nChoose encryption:\n");
+            printf("1 - Simple Columnar\n");
+            printf("2 - Simple Linear\n");
+            printf("3 - Columnar with Numeric Key\n");
+            printf("4 - by Itinerary\n");
+            printf("5 - Triangular\n");
+            printf("6 - External Spiral\n");
+            printf("7 - Internal Spiral\n");
+            printf("8 - Zigzag\n");
+            printf("9 - 'L' Pattern\n");
+            printf("0 - Exit\n");
+            printf("OPTION: ");
+            scanf("%i", &option);
+            setbuf(stdin, NULL);
 
-        fclose(f_ResultEncryption);
+            printf("\n");
+
+            switch (option){
+                case 1:
+                    printf("Simple Columnar\n");
+                    printf("Number of columns: ");
+                    scanf("%i", &columnsCount);
+                    simpleColumnar(textForEncrypt, columnsCount);
+                    break;
+                
+                case 2:
+                    printf("Simple Linear\n");
+                    printf("Number of lines: ");
+                    scanf("%i", &linesCount);
+                    simpleLinear(textForEncrypt, linesCount);
+                    break;
+
+                case 3:
+                    printf("Columnar with Numeric Key\n");
+                    printf("Enter the key: ");
+                    fgets(key, 550, stdin);
+                    columnarWithNumericKey(textForEncrypt, key);
+                    break;
+
+                case 4:
+                    printf("by Itinerary\n");
+                    printf("Number of lines: ");
+                    scanf("%i", &linesCount);
+                    byItinerary(textForEncrypt,linesCount);
+                    break;
+
+                case 5:
+                    printf("Triangular\n");
+                    triangular(textForEncrypt);
+                    break;
+
+                case 6:
+                    printf("External Spiral\n");
+                    externalSpiral(textForEncrypt);
+                    break;
+
+                case 7:
+                    printf("Internal Spiral\n");
+                    internalSpiral(textForEncrypt);
+                    break;
+                
+                case 8:
+                    printf("Zigzag\n");
+                    zigzag(textForEncrypt);
+                    break;
+                
+                case 9:
+                    printf("'L' Pattern\n");
+                    lPattern(textForEncrypt);
+                    break;
+
+                case 0:
+                    printf("Exiting...\n");
+                    break;
+
+                default:
+                    printf("Invalid option!!!\n");
+                    break;
+            }
+
+            setbuf(stdin, NULL);
+
+            printf("Result: %s\n\n", textForEncrypt);
+
+            FILE * f_ResultEncryption = fopen("result-ecryption.txt", "w");
+
+            fprintf(f_ResultEncryption, textForEncrypt);
+
+            fclose(f_ResultEncryption);
 
 
-        system("pause");
-        system("cls");
+            system("pause");
+        }
 
-    }while(option != 0);
+    }while(option != 0 || error == 1);
 
     return 0;
 }

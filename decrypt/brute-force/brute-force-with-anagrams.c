@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 #include "../../string-processings/remove-invalid-characters.h"
 
@@ -14,8 +15,12 @@ void mergePreStringWithCharacter(char current[], char preString[], char characte
 
 int verifyAnagram(char anagram[], char originalText[]);
 
-int option, actionOption, coutAnagrams=0;
+double factorial(int number);
+
+int option, actionOption;
+double coutAnagrams=0.0;
 char OriginalText[100000];
+int end=0;
 
 int main(){
     char encryptedText[100000], originalText[100000];;
@@ -23,6 +28,7 @@ int main(){
 
     FILE * f_EncryptedText;
     FILE * f_OriginalText;
+
 
     printf("Decrypt using Brute Force with Anagrams\n\n");
 
@@ -77,7 +83,7 @@ int main(){
                 fclose(f_OriginalText);
 
                 printf("The 'original-text.txt' file not found!\n");
-                printf("An empty file was created!\n");
+                printf("An empty file has been created!\n");
                 system("pause");
                 exit(0);
             }
@@ -86,26 +92,56 @@ int main(){
             fgets(originalText, 100000, f_OriginalText);
 
             fclose(f_EncryptedText);
+            fclose(f_OriginalText);
             break;
     }
     
-    if(actionOption == 1){
-        printf("\nShowing...\n\n");
-    }
-
-    if(option == 2 || actionOption == 2){
-        printf("\nDecrypting...\n\n");
-    }
 
     strcpy(OriginalText, originalText);
 
     removeInvalidCharacters(encryptedText);
     removeInvalidCharacters(OriginalText);
 
-    for(int i=0; encryptedText[i]!='\0'; i++){
-        generatePreString(encryptedText, preString, i);
-        getAnagrams(encryptedText, preString);
+    if(actionOption == 1){
+        printf("\nShowing...\n\n");
     }
+
+    if(option == 2 || actionOption == 2){
+        printf("\nDecrypting...\n\n");
+        printf("Count Anagrams: %.0lf\n\n", factorial(strlen(encryptedText)));
+        printf("Encrypted Text: %s\n", encryptedText);
+    }
+
+    clock_t Ticks[2];
+
+    Ticks[0] = clock();
+
+    for(int i=0; encryptedText[i]!='\0'; i++){
+        if(end == 0){
+            generatePreString(encryptedText, preString, i);
+            getAnagrams(encryptedText, preString);
+        }
+        else{
+            break;
+        }
+    }
+
+    Ticks[1] = clock();
+
+    double time = (Ticks[1] - Ticks[0]) * 1000.0 / CLOCKS_PER_SEC;
+
+    int milliseconds = (int) time % 1000;
+    int seconds = (int) (time / 1000) % 60;
+    int minutes = (int) (time / 60000) % 60;
+    int hours = (int) (minutes / 60);
+
+    printf("Tempo gasto: %g ms.\n", time);
+
+    printf("\nWaiting Time: %i:%i:%i:%i\n(h:min:sec:milli)\n\n", hours, minutes, seconds, milliseconds);
+
+    system("pause");
+
+    return 0;
 }
 
 void generatePreString(char text[], char preString[], int position){
@@ -114,40 +150,46 @@ void generatePreString(char text[], char preString[], int position){
 }
 
 void getAnagrams(char text[], char preString[]){
-    int lengthText = strlen(text);
-    char postString[lengthText];
+    if(end == 0){
+        int lengthText = strlen(text);
+        char postString[lengthText];
 
-    removePreStringFromText(text, preString, postString);
+        removePreStringFromText(text, preString, postString);
 
-    for(int i=0; postString[i]!='\0'; i++){
-        char currentAnagram[lengthText];
-        
-        mergePreStringWithCharacter(currentAnagram, preString, postString[i]);
+        for(int i=0; postString[i]!='\0'; i++){
+            char currentAnagram[lengthText];
+            
+            mergePreStringWithCharacter(currentAnagram, preString, postString[i]);
 
-        if(strlen(currentAnagram) == lengthText){
-            coutAnagrams++;
+            if(strlen(currentAnagram) == lengthText){
+                coutAnagrams++;
 
-            if(actionOption == 1){
-                printf("ANAGRAM %i: %s\n", coutAnagrams, currentAnagram);
-            }
+                if(actionOption == 1){
+                    printf("ANAGRAM %.0lf: %s\n", coutAnagrams, currentAnagram);
+                }
 
-            if(option == 2 || actionOption == 2){
-                if(verifyAnagram(currentAnagram, OriginalText)==1){
-                    FILE * f_ResultDecrypting = fopen("result-decrypting.txt", "w");
+                if(option == 2 || actionOption == 2){
+                    if(verifyAnagram(currentAnagram, OriginalText)==1){
+                        FILE * f_ResultDecrypting = fopen("result-decrypting.txt", "w");
 
-                    fprintf(f_ResultDecrypting, currentAnagram);
+                        fprintf(f_ResultDecrypting, currentAnagram);
 
-                    fclose(f_ResultDecrypting);
+                        fclose(f_ResultDecrypting);
 
-                    printf("RESULT: %s\n", currentAnagram);
-                    printf("Count Tests: %i\n", coutAnagrams);
-                    printf("The result was saved in the file: 'result-decrypting.txt'!\n");
-                    exit(0);
+                        printf("RESULT:         %s\a\n\n", currentAnagram);
+                        printf("Count Tests:    %.0lf\n\n", coutAnagrams);
+                        printf("The result has been saved in the file: 'result-decrypting.txt'!\n");
+                        end=1;
+                        return;
+                    }
                 }
             }
-        }
 
-        getAnagrams(text, currentAnagram);
+            getAnagrams(text, currentAnagram);
+        }
+    }
+    else{
+        return;
     }
 }
 
@@ -182,6 +224,16 @@ int verifyAnagram(char anagram[], char originalText[]){
     }
 
     return 0;
+}
+
+double factorial(int number){
+    double fact=1;
+
+    for(int i=1; i<=number; i++){
+        fact *= i;
+    }
+
+    return fact;
 }
 
 //SILVA, Luiz Paulo Moreira. "O que é anagrama?"; Brasil Escola. Disponível em: https://brasilescola.uol.com.br/o-que-e/matematica/o-que-e-anagrama.htm. Acesso em 27 de julho de 2020.
