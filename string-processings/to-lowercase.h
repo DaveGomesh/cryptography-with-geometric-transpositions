@@ -1,3 +1,16 @@
+#ifndef TO_LOWERCASE_H_INCLUDED
+#define TO_LOWERCASE_H_INCLUDED
+
+/**
+ * ----------------------------------------------------
+ * Convert to Lowercase:
+ * -> Leaves all lowercase letters.
+ * ----------------------------------------------------
+ * @author: David Gomesh
+ * ----------------------------------------------------
+ * *** The file is in UTF-8 codification! ***
+ * ----------------------------------------------------
+*/
 #include <string.h>
 
 void toLowercase(char text[]){
@@ -140,3 +153,5 @@ void toLowercase(char text[]){
 
     strcpy(text, auxiliaryText);
 }
+
+#endif

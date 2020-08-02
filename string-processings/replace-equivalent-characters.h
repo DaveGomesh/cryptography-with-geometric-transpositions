@@ -1,3 +1,17 @@
+#ifndef REPLACE_EQUIVALENT_CHARACTERS_H_INCLUDED
+#define REPLACE_EQUIVALENT_CHARACTERS_H_INCLUDED
+
+/**
+ * ----------------------------------------------------------------
+ * Replace Equivalent Characters:
+ * -> Exchange accented characters for non-accented characters.
+ * ----------------------------------------------------------------
+ * @author: David Gomesh
+ * ----------------------------------------------------------------
+ * *** The file is in UTF-8 codification! ***
+ * ----------------------------------------------------------------
+*/
+
 #include <string.h>
 
 void replaceEquivalentCharacters(char text[]){
@@ -191,26 +205,4 @@ void replaceEquivalentCharacters(char text[]){
     strcpy(text, auxiliaryText);
 }
 
-//Interval (128 - 144) ok 
-
-//Interval (147 - 154) ok 
-
-//Interval (160 - 165) ok
-
-//Interval (181 - 183) ok
-
-//Interval (198 - 199) ok
-
-//Interval (210 - 216) ok
-
-//Interval (222) ok
-
-//Interval (224) ok
-
-//Interval (225) ok
-
-//Interval (226 - 229) ok
-
-//Interval (233 - 237) ok
-
-//Interval (251 - 253) ok
+#endif

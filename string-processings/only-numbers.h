@@ -1,3 +1,17 @@
+#ifndef ONLY_NUMBERS_H_INCLUDED
+#define ONLY_NUMBERS_H_INCLUDED
+
+/**
+ * ----------------------------------------------------
+ * Only Numbers:
+ * -> Removes all characters that aren't numbers.
+ * ----------------------------------------------------
+ * @author: David Gomesh
+ * ----------------------------------------------------
+ * *** The file is in UTF-8 codification! ***
+ * ----------------------------------------------------
+*/
+
 #include <string.h>
 
 void onlyNumbers(char text[]){
@@ -19,3 +33,5 @@ void onlyNumbers(char text[]){
 
     strcpy(text, auxiliaryText);
 }
+
+#endif

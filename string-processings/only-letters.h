@@ -1,3 +1,17 @@
+#ifndef ONLY_LETTERS_H_INCLUDED
+#define ONLY_LETTERS_H_INCLUDED
+
+/**
+ * ----------------------------------------------------
+ * Only Letters:
+ * -> Removes all characters that aren't letters.
+ * ----------------------------------------------------
+ * @author: David Gomesh
+ * ----------------------------------------------------
+ * *** The file is in UTF-8 codification! ***
+ * ----------------------------------------------------
+*/
+
 #include <string.h>
 
 void onlyLetters(char text[]){
@@ -19,3 +33,5 @@ void onlyLetters(char text[]){
 
     strcpy(text, auxiliaryText);
 }
+
+#endif

@@ -1,3 +1,17 @@
+#ifndef TO_UPPERCASE_H_INCLUDED
+#define TO_UPPERCASE_H_INCLUDED
+
+/**
+ * ----------------------------------------------------
+ * Convert to Lowercase:
+ * -> Leaves all lowercase letters.
+ * ----------------------------------------------------
+ * @author: David Gomesh
+ * ----------------------------------------------------
+ * *** The file is in UTF-8 codification! ***
+ * ----------------------------------------------------
+*/
+
 #include <string.h>
 
 void toUppercase(char text[]){
@@ -148,3 +162,5 @@ void toUppercase(char text[]){
 
     strcpy(text, auxiliaryText);
 }
+
+#endif

@@ -1,3 +1,17 @@
+#ifndef REMOVE_INVALID_CHARACTERS_H_INCLUDED
+#define REMOVE_INVALID_CHARACTERS_H_INCLUDED
+
+/**
+ * -------------------------------------------------------------
+ * Remove Invalid Characters:
+ * -> Remove all characters that aren't letters or numbers.
+ * -------------------------------------------------------------
+ * @author: David Gomesh
+ * -------------------------------------------------------------
+ * *** The file is in UTF-8 codification! ***
+ * -------------------------------------------------------------
+*/
+
 #include <string.h>
 
 void removeInvalidCharacters(char text[]){
@@ -78,3 +92,5 @@ void removeInvalidCharacters(char text[]){
 
     strcpy(text, auxiliaryText);
 }
+
+#endif
