@@ -1,21 +1,66 @@
+#ifndef COLUMNAR_WITH_NUMERIC_KEY_H_INCLUDED
+#define COLUMNAR_WITH_NUMERIC_KEY_H_INCLUDED
+
+/**
+ * ----------------------------------------------------------------
+ * WELCOME TO GEOMETRIC TRANSPOSITIONS!
+ * ----------------------------------------------------------------
+ * Columnar Transposition with Numeric Key
+ * ----------------------------------------------------------------
+ * @author David Gomesh
+ * ----------------------------------------------------------------
+ * *** This file is in UTF-8 codification! ***
+ * ----------------------------------------------------------------
+*/
+
 /**================================================================
+ * ----------------------------------------------------------------
+ * WELCOME TO DOCUMENTATION!
+ * ----------------------------------------------------------------
+ * Columnar with Numeric Key Transposition:
+ * -> Input: Linear
+ * -> Output: Columnar based on key
+ *   -> Example: KEY = PIZZA
+ *      P = 3
+ *      I = 2
+ *      Z = 4
+ *      Z = 5
+ *      A = 1
+ *   -> Result: 3, 2, 4, 5, 1
+ *   -> This is the output order!
+ * 
+ * -> Obs. 1: The length of key is the number of columns.
+ * -> Obs. 2: The user will inform the key.
+ * ----------------------------------------------------------------
+ * @author David Gomesh
+ * GitHub: DavidGomesh
+ * Instagram: @david_gomesh
+ * E-mail: david.gomes@acad.ifma.edu.br
+ * ----------------------------------------------------------------
+ * *** The file is in UTF-8 codification! ***
+ * ----------------------------------------------------------------
+*///===============================================================
+
 #include <string.h>
 
 void columnarWithNumericKey(char text[], char key[]){
     int lengthText = strlen(text), lengthKey = strlen(key);
-    int positions[lengthKey];
-    char auxText[lengthText];
+    int order[lengthKey];
+    char auxiliaryText[lengthText];
 
+    //Number of Columns already defined
     int linesCount, columnsCount = lengthKey;
 
+    //Order
     for(int upper=65, lower=97, value=1; upper<=90 && lower<=122; upper++, lower++){
         for(int i=0; i<lengthKey; i++){
             if(key[i]==upper || key[i]==lower){
-                positions[i] = value++;
+                order[i] = value++;
             }
         }
     }
 
+    //Calculate the Number of Lines
     if(lengthText % columnsCount == 0){
         linesCount = lengthText / columnsCount;
     }else{
@@ -24,6 +69,7 @@ void columnarWithNumericKey(char text[], char key[]){
 
     char matrix[linesCount][columnsCount];
 
+    //Input
     for(int i=0, k=0; i<linesCount; i++){
         for(int j=0; j<columnsCount; j++){
             if(k < lengthText){
@@ -34,13 +80,14 @@ void columnarWithNumericKey(char text[], char key[]){
         }
     }
 
+    //Output
     int k=0;
-    for(int value=1; value<=lengthKey; value++){
+    for(int currentPosition=1; currentPosition<=lengthKey; currentPosition++){
         for(int l=0; l<lengthKey; l++){
-            if(positions[l]==value){
+            if(order[l]==currentPosition){
                 for(int i=0, j=l; i<linesCount; i++){
                     if(matrix[i][j] != '-'){
-                        auxText[k++] = matrix[i][j];
+                        auxiliaryText[k++] = matrix[i][j];
                     }
                 }
                 break;
@@ -48,7 +95,10 @@ void columnarWithNumericKey(char text[], char key[]){
         }
     }
 
-    auxText[k] = '\0';
+    //Return
+    auxiliaryText[k] = '\0';
     
-    strcpy(text, auxText);
+    strcpy(text, auxiliaryText);
 }
+
+#endif /* COLUMNAR_WITH_NUMERIC_KEY_H_INCLUDED */
