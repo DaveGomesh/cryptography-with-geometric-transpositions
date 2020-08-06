@@ -97,7 +97,7 @@ void toUppercase(char text[]){
                 break;
             
             case -43:
-                auxiliaryText[i] = -183;//Normal I
+                auxiliaryText[i] = 73;//Normal I
                 break;
             //
 
@@ -153,7 +153,7 @@ void toUppercase(char text[]){
                 break;
             
             case -104:
-                auxiliaryText[i] = -167;//Normal Y
+                auxiliaryText[i] = 89;//Normal Y
                 break;
             //      
         }

@@ -1,9 +1,24 @@
+#ifndef EXTERNAL_SPIRAL_H_INCLUDED
+#define EXTERNAL_SPIRAL_H_INCLUDED
+
+/**
+ * ----------------------------------------------------------------
+ * WELCOME TO GEOMETRIC TRANSPOSITIONS!
+ * ----------------------------------------------------------------
+ * Transposition with External Spiral
+ * ----------------------------------------------------------------
+ * @author David Gomesh
+ * ----------------------------------------------------------------
+ * *** This file is in UTF-8 codification! ***
+ * ----------------------------------------------------------------
+*/
+
 #include <string.h>
 #include <math.h>
 
 void externalSpiral(char text[]){
     int lengthText = strlen(text);
-    char auxText[lengthText];
+    char auxiliaryText[lengthText];
 
     int linesCount, columnsCount;
 
@@ -81,7 +96,7 @@ void externalSpiral(char text[]){
         if(currentLine < linesCount){
             for(i=currentLine, j=0; i>=0 && j < columnsCount; i--, j++){
                 if(matrix[i][j] != '-'){
-                    auxText[k++] = matrix[i][j];
+                    auxiliaryText[k++] = matrix[i][j];
                 }
             }
             currentLine++;
@@ -89,14 +104,16 @@ void externalSpiral(char text[]){
         else{
             for(i=currentLine-1, j=currentColumn; j<columnsCount; i--, j++){
                 if(matrix[i][j] != '-'){
-                    auxText[k++] = matrix[i][j];
+                    auxiliaryText[k++] = matrix[i][j];
                 }
             }
             currentColumn++;
         }
     }
 
-    auxText[k] = '\0';
+    auxiliaryText[k] = '\0';
 
-    strcpy(text, auxText);
+    strcpy(text, auxiliaryText);
 }
+
+#endif /* EXTERNAL_SPIRAL_H_INCLUDED */

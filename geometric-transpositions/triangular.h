@@ -1,8 +1,23 @@
+#ifndef TRIANGULAR_H_INCLUDED
+#define TRIANGULAR_H_INCLUDED
+
+/**
+ * ----------------------------------------------------------------
+ * WELCOME TO GEOMETRIC TRANSPOSITIONS!
+ * ----------------------------------------------------------------
+ * Triangular Transposition
+ * ----------------------------------------------------------------
+ * @author David Gomesh
+ * ----------------------------------------------------------------
+ * *** This file is in UTF-8 codification! ***
+ * ----------------------------------------------------------------
+*/
+
 #include <string.h>
 
 void triangular(char text[]){
     int lengthText = strlen(text);
-    char auxText[lengthText];
+    char auxiliaryText[lengthText];
 
     int linesCount=1, columnsCount;
 
@@ -44,12 +59,14 @@ void triangular(char text[]){
     for(int j=0; j<columnsCount; j++){
         for(int i=0; i<linesCount; i++){
             if(matrix[i][j] != '-'){
-                auxText[k++] = matrix[i][j];                
+                auxiliaryText[k++] = matrix[i][j];                
             }
         }
     }
 
-    auxText[k] = '\0';
+    auxiliaryText[k] = '\0';
 
-    strcpy(text, auxText);
+    strcpy(text, auxiliaryText);
 }
+
+#endif /* TRIANGULAR_H_INCLUDED */

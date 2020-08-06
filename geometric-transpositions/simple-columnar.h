@@ -1,10 +1,26 @@
+#ifndef SIMPLE_COLUMNAR_H_INCLUDED
+#define SIMPLE_COLUMNAR_H_INCLUDED
+
+/**
+ * ----------------------------------------------------------------
+ * WELCOME TO GEOMETRIC TRANSPOSITIONS!
+ * ----------------------------------------------------------------
+ * Simple Columnar Transposition
+ * ----------------------------------------------------------------
+ * @author David Gomesh
+ * ----------------------------------------------------------------
+ * *** This file is in UTF-8 codification! ***
+ * ----------------------------------------------------------------
+*/
+
 #include <string.h>
 
 void simpleColumnar(char text[], int columnsCount){
     int lengthText = strlen(text);
-    char auxText[lengthText];
+    char auxiliaryText[lengthText];
     int linesCount;
 
+    //Calculate the Matrix Size
     if(lengthText % columnsCount == 0){
         linesCount = lengthText / columnsCount;
     }else{
@@ -13,6 +29,7 @@ void simpleColumnar(char text[], int columnsCount){
 
     char matrix[linesCount][columnsCount];
 
+    //Input
     for(int i=0, k=0; i<linesCount; i++){
         for(int j=0; j<columnsCount; j++){
             if(k < lengthText){
@@ -23,16 +40,20 @@ void simpleColumnar(char text[], int columnsCount){
         }
     }
 
+    //Output
     int k=0;
     for(int j=0; j<columnsCount; j++){
         for(int i=0; i<linesCount; i++){
             if(matrix[i][j] != '-'){
-                auxText[k++] = matrix[i][j];                
+                auxiliaryText[k++] = matrix[i][j];                
             }
         }
     }
+    
+    //Return
+    auxiliaryText[k] = '\0';
 
-    auxText[k] = '\0';
-
-    strcpy(text, auxText);
+    strcpy(text, auxiliaryText);
 }
+
+#endif /* SIMPLE_COLUMNAR_H_INCLUDED */

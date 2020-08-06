@@ -1,9 +1,24 @@
+#ifndef L_PATTERN_H_INCLUDED
+#define L_PATTERN_H_INCLUDED
+
+/**
+ * ----------------------------------------------------------------
+ * WELCOME TO GEOMETRIC TRANSPOSITIONS!
+ * ----------------------------------------------------------------
+ * Transposition with 'L' Pattern
+ * ----------------------------------------------------------------
+ * @author David Gomesh
+ * ----------------------------------------------------------------
+ * *** This file is in UTF-8 codification! ***
+ * ----------------------------------------------------------------
+*/
+
 #include <string.h>
 #include <math.h>
 
 void lPattern(char text[]){
     int lengthText = strlen(text);
-    char auxText[lengthText];
+    char auxiliaryText[lengthText];
 
     int linesCount, columnsCount;
 
@@ -24,7 +39,6 @@ void lPattern(char text[]){
 
     int i=0, j=0, k=0;
     char state = 'd'; //u = up, r = right, d = down, l = left
-
 
     int inputVerticalLimit = linesCount-1;
     int inputHorizontalLimit = 0;
@@ -90,78 +104,37 @@ void lPattern(char text[]){
     i = 0;
     j = 0;
     k = 0;
-    state = 'r'; //u = up, r = right, d = down, l = left
-
-    // The first position is the limit in the up, and the second position is the limit in the bottom
-    int outputVerticalLimit[2] = {1, linesCount-1};
-    // The first position is the limit in the left, and the second position is the limit in the right
-    int outputHorizontalLimit[2] = {0, columnsCount-1};
-    
+    int currentLine = linesCount-1, currentColumn = 1;
     while(k<lengthText){
-        switch(state){
-            case 'r':
-                while(j<=outputHorizontalLimit[1] && k<lengthText){
-                    if(matrix[i][j] != '-'){
-                        auxText[k++] = matrix[i][j++];
-                    }
-                    else{
-                        j++;
-                    }
+        
+        if(currentLine >= 0){
+            for(i=currentLine, j=0; i<linesCount && j < columnsCount; i++, j++){
+                if(matrix[i][j] != '-'){
+                    auxiliaryText[k++] = matrix[i][j];
                 }
-                j--;
-                i++;
-                outputHorizontalLimit[1]--;
-                state = 'd';
-                break;
-            
-            case 'd':
-                while(i<=outputVerticalLimit[1] && k<lengthText){
-                    if(matrix[i][j] != '-'){
-                        auxText[k++] = matrix[i++][j];
-                    }
-                    else{
-                        i++;
-                    }
+            }
+            currentLine--;
+        }
+        else{
+            for(i=0, j=currentColumn; j<columnsCount; i++, j++){
+                if(matrix[i][j] != '-'){
+                    auxiliaryText[k++] = matrix[i][j];
                 }
-                i--;
-                j--;
-                outputVerticalLimit[1]--;
-                state = 'l';
-                break;
-            
-            case 'l':
-                while(j>=outputHorizontalLimit[0] && k<lengthText){
-                    if(matrix[i][j] != '-'){
-                        auxText[k++] = matrix[i][j--];
-                    }
-                    else{
-                        j--;
-                    }
-                }
-                j++;
-                i--;
-                outputHorizontalLimit[0]++;
-                state = 'u';
-                break;
-
-            case 'u':
-                while(i>=outputVerticalLimit[0] && k<lengthText){
-                    if(matrix[i][j] != '-'){
-                        auxText[k++] = matrix[i--][j];
-                    }
-                    else{
-                        i--;
-                    }
-                }
-                i++;
-                j++;
-                outputVerticalLimit[0]++;
-                state = 'r';
-                break;
+            }
+            currentColumn++;
         }
     }
 
-    auxText[k] = '\0';
+    auxiliaryText[k] = '\0';
 
-    strcpy(text, auxText);
+    strcpy(text, auxiliaryText);
+    
+    for(int i=0; i<linesCount; i++){
+        for(int j=0; j<columnsCount; j++){
+            printf("%c ", matrix[i][j]);
+        }
+        printf("\n");
+    }
 }
+
+#endif /* L_PATTERN_H_INCLUDED */

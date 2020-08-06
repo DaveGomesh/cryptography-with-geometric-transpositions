@@ -1,9 +1,24 @@
+#ifndef INTERNAL_SPIRAL_H_INCLUDED
+#define INTERNAL_SPIRAL_H_INCLUDED
+
+/**
+ * ----------------------------------------------------------------
+ * WELCOME TO GEOMETRIC TRANSPOSITIONS!
+ * ----------------------------------------------------------------
+ * Transposition with Internal Spiral
+ * ----------------------------------------------------------------
+ * @author David Gomesh
+ * ----------------------------------------------------------------
+ * *** This file is in UTF-8 codification! ***
+ * ----------------------------------------------------------------
+*/
+
 #include <string.h>
 #include <math.h>
 
 void internalSpiral(char text[]){
     int lengthText = strlen(text);
-    char auxText[lengthText];
+    char auxiliaryText[lengthText];
     
     int linesCount, columnsCount;
 
@@ -105,7 +120,7 @@ void internalSpiral(char text[]){
         if(currentLine >= 0){
             for(i=currentLine, j=0; i<linesCount && j < columnsCount; i++, j++){
                 if(matrix[i][j] != '-'){
-                    auxText[k++] = matrix[i][j];
+                    auxiliaryText[k++] = matrix[i][j];
                 }
             }
             currentLine--;
@@ -113,14 +128,16 @@ void internalSpiral(char text[]){
         else{
             for(i=0, j=currentColumn; j<columnsCount; i++, j++){
                 if(matrix[i][j] != '-'){
-                    auxText[k++] = matrix[i][j];
+                    auxiliaryText[k++] = matrix[i][j];
                 }
             }
             currentColumn++;
         }
     }
 
-    auxText[k] = '\0';
+    auxiliaryText[k] = '\0';
 
-    strcpy(text, auxText);
+    strcpy(text, auxiliaryText);
 }
+
+#endif /* INTERNAL_SPIRAL_H_INCLUDED */

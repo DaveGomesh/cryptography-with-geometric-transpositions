@@ -126,6 +126,7 @@ int main(){
                     printf("Columnar with Numeric Key\n");
                     printf("Enter the key: ");
                     fgets(key, 550, stdin);
+                    removeInvalidCharacters(key);
                     columnarWithNumericKey(textForEncrypt, key);
                     break;
 
@@ -199,12 +200,12 @@ int main(){
 
 //Revelado pelo Santos, em 2009, Neymar se tornou o principal futebolista em atividade no país. Em 2013, foi vendido ao Barcelona em alta,[13] após ser protagonista da conquista da Copa das Confederações FIFA 2013 pela Seleção Brasileira.[14][15] Ao lado de Messi, Iniesta, Xavi, Daniel Alves e Luis Suárez, conquistou a Liga dos Campeões da UEFA de 2014–15 e se transformou no principal futebolista brasileiro e um dos principais futebolistas do mundo.[16] Em 2015, foi finalista do prêmio Bola de Ouro da FIFA (melhor jogador do mundo).[17] Em 2017, se tornou a transferência mais cara da história do futebol mundial, com sua venda milionária ao Paris Saint-Germain por 222 milhões de euros.[18] Nesse mesmo ano, foi pela segunda vez na carreira um dos três finalistas da premiação da FIFA de melhor jogador do mundo, atualmente nomeada como The Best FIFA Football Awards ou apenas FIFA The Best. Também foi finalista pela revista France Football, responsável pela entrega do Ballon d'Or ou Bola de Ouro.
 
-// for(int i=0; i<linesCount; i++){
-//     for(int j=0; j<columnsCount; j++){
-//         printf("%c ", matrix[i][j]);
-//     }
-//     printf("\n");
-// }
+    // for(int i=0; i<linesCount; i++){
+    //     for(int j=0; j<columnsCount; j++){
+    //         printf("%c ", matrix[i][j]);
+    //     }
+    //     printf("\n");
+    // }
 
 //printf("Matrix Sizes: %i x %i\n", linesCount, columnsCount);
 // printf("Current Indexes: %i x %i\n", i, j);
@@ -215,3 +216,22 @@ int main(){
 // for(int i=0; i<256; i++){
 //     printf("Decimal Code: %i\t Character: %c\n", i, i);
 // }
+
+/**================================================================
+ * ----------------------------------------------------------------
+ * WELCOME TO DOCUMENTATION!
+ * ----------------------------------------------------------------
+ * Simple Columnar Transposition:
+ * -> Input: Linear
+ * -> Output: Columnar
+ * ----------------------------------------------------------------
+ * @author David Gomesh
+ * GitHub: DavidGomesh
+ * Instagram: @david_gomesh
+ * E-mail: david.gomes@acad.ifma.edu.br
+ * ----------------------------------------------------------------
+ * *** The file is in UTF-8 codification! ***
+ * ----------------------------------------------------------------
+*///===============================================================
+
+// J-------------------------K THE END L-----------------------l //
