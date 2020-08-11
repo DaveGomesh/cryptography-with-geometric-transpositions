@@ -7,7 +7,7 @@
 - Sistema Operacional: **Windows 10**
 - Editor: **VS Code**
 - Outros programas: **Photoshop CC 2019**
-- [***Referências***](##-Referências-Bibliográficas)
+- [***Referências***](#referências-bibliográficas)
 
 ## O que é Transposição Geométrica?
 
@@ -19,15 +19,15 @@ Significa dispor um texto em uma matriz formando alguma forma geométrica. Por e
 
 ## Quais transposições existem no Projeto?
 
-- [Colunar Simples](##-Columnar-Simples)
-- [Linear Simples](##-Linear-Simples)
-- [Linear com Chave Numérica](##-Linear-com-Chave-Numérica)
-- [Transposição por Itinerário](##-Transposição-por-Itinerário)
-- [Triangular](##-Triangular)
-- [Espiral Externo](##-Espiral-Externo)
-- [Espiral Interno](##-Espiral-Interno)
-- [Zigue-Zague](##-Ziguezague)
-- [Padrão 'L'](##-Padrão-'L')
+- [Colunar Simples](#columnar-simples)
+- [Linear Simples](#linear-simples)
+- [Linear com Chave Numérica](#linear-com-chave-numérica)
+- [Transposição por Itinerário](#transposição-por-itinerário)
+- [Triangular](#triangular)
+- [Espiral Externo](#espiral-externo)
+- [Espiral Interno](#espiral-interno)
+- [Zigue-Zague](#ziguezague)
+- [Padrão 'L'](#padrão-'l')
 
 ## Alguns padrões a serem seguidos
 
