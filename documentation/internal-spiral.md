@@ -1,4 +1,4 @@
-# Transposição por Espiral Interna
+# Transposição por Espiral Interno
 
 ## Definição da Função
 

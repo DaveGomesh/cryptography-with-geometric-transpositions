@@ -1,4 +1,4 @@
-# Transposição por Espiral Externa
+# Transposição por Espiral Externo
 
 ## Definição da Função
 
