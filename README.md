@@ -26,7 +26,7 @@ Significa dispor um texto em uma matriz formando alguma forma geométrica. Por e
 - [Triangular](#triangular)
 - [Espiral Externo](#espiral-externo)
 - [Espiral Interno](#espiral-interno)
-- [Zigue-Zague](#ziguezague)
+- [Ziguezague](#ziguezague)
 - [Padrão 'L'](#padrão-'l')
 
 ## Alguns padrões a serem seguidos
@@ -37,7 +37,7 @@ Significa dispor um texto em uma matriz formando alguma forma geométrica. Por e
 
 ## Colunar Simples
 
-[Veja com mais detalhes essa transposição](https://github.com/DavidGomesh/cryptography-with-geometric-transpositions/blob/master/documentation/simple-columnar.md "Transposição Colunar Simples")
+[Veja com mais detalhes essa transposição](https://github.com/DavidGomesh/cryptography-with-geometric-transpositions/blob/master/documentation/simple-columnar.md)
 
 | ![Demostração do Funcionamento da Transposição Colunar Simples](https://user-images.githubusercontent.com/65545355/89732053-58190780-da22-11ea-8ba9-827ee28a5e42.gif "Demostração do Funcionamento da Transposição Colunar Simples") |
 |-|
@@ -45,7 +45,7 @@ Significa dispor um texto em uma matriz formando alguma forma geométrica. Por e
 
 ## Linear Simples
 
-[Veja com mais detalhes essa transposição](https://github.com/DavidGomesh/cryptography-with-geometric-transpositions/blob/master/documentation/simple-linear.md "Transposição Linear Simples")
+[Veja com mais detalhes essa transposição](https://github.com/DavidGomesh/cryptography-with-geometric-transpositions/blob/master/documentation/simple-linear.md)
 
 | ![Demostração do Funcionamento da Transposição Linear Simples](https://user-images.githubusercontent.com/65545355/89734284-95d15c80-da31-11ea-91f6-e4808b260d9d.gif "Demostração do Funcionamento da Transposição Linear Simples") |
 |-|
@@ -53,15 +53,14 @@ Significa dispor um texto em uma matriz formando alguma forma geométrica. Por e
 
 ## Linear com Chave Numérica
 
-[Veja com mais detalhes essa transposição](https://github.com/DavidGomesh/cryptography-with-geometric-transpositions/blob/master/documentation/linear-with-numeric-key.md "Transposição Linear com Chave Numérica")
-
+[Veja com mais detalhes essa transposição](https://github.com/DavidGomesh/cryptography-with-geometric-transpositions/blob/master/documentation/linear-with-numeric-key.md)
 | ![Demostração do Funcionamento da Transposição Linear com Chave Numérica](https://user-images.githubusercontent.com/65545355/89735086-548f7b80-da36-11ea-9d00-4f2126c0c4c0.gif "Demostração do Funcionamento da Transposição Linear com Chave Numérica") |
 |-|
 | *Demostração do Funcionamento da Transposição Linear com Chave Numérica.* |
 
 ## Transposição por Itinerário
 
-[Veja com mais detalhes essa transposição](https://github.com/DavidGomesh/cryptography-with-geometric-transpositions/blob/master/documentation/by-itinerary.md "Transposição por Itinerário")
+[Veja com mais detalhes essa transposição](https://github.com/DavidGomesh/cryptography-with-geometric-transpositions/blob/master/documentation/by-itinerary.md)
 
 | ![Demostração do Funcionamento da Transposição Colunar Simples](https://user-images.githubusercontent.com/65545355/89744536-4a946980-da84-11ea-85a0-4128e983399d.gif "Demostração do Funcionamento da Transposição Colunar Simples") |
 |-|
@@ -69,7 +68,7 @@ Significa dispor um texto em uma matriz formando alguma forma geométrica. Por e
 
 ## Triangular
 
-[Veja com mais detalhes essa transposição](https://github.com/DavidGomesh/cryptography-with-geometric-transpositions/blob/master/documentation/triangular.md "Transposição Triangular")
+[Veja com mais detalhes essa transposição](https://github.com/DavidGomesh/cryptography-with-geometric-transpositions/blob/master/documentation/triangular.md)
 
 | ![Demostração do Funcionamento da Transposição Triangular](https://user-images.githubusercontent.com/65545355/89746761-dd87d080-da91-11ea-94eb-65598fb3df3d.gif "Demostração do Funcionamento da Transposição Triangular") |
 |-|
@@ -77,7 +76,7 @@ Significa dispor um texto em uma matriz formando alguma forma geométrica. Por e
 
 ## Espiral Externo
 
-[Veja com mais detalhes essa transposição](https://github.com/DavidGomesh/cryptography-with-geometric-transpositions/blob/master/documentation/external-spiral.md "Transposição por Espiral Externo")
+[Veja com mais detalhes essa transposição](https://github.com/DavidGomesh/cryptography-with-geometric-transpositions/blob/master/documentation/external-spiral.md)
 
 | ![Demostração do Funcionamento da Transposição por Espiral Externa](https://user-images.githubusercontent.com/65545355/89795522-e19e0780-dafe-11ea-9699-4f95762fe629.gif "Demostração do Funcionamento da Transposição por Espiral Externa") |
 |-|
@@ -85,7 +84,7 @@ Significa dispor um texto em uma matriz formando alguma forma geométrica. Por e
 
 ## Espiral Interno
 
-[Veja com mais detalhes essa transposição](https://github.com/DavidGomesh/cryptography-with-geometric-transpositions/blob/master/documentation/internal-spiral.md "Transposição por Espiral Interno")
+[Veja com mais detalhes essa transposição](https://github.com/DavidGomesh/cryptography-with-geometric-transpositions/blob/master/documentation/internal-spiral.md)
 
 | ![Demostração do Funcionamento da Transposição por Espiral Interna](https://user-images.githubusercontent.com/65545355/89905003-fdb5ad80-dbbf-11ea-8e38-9213735e9890.gif "Demostração do Funcionamento da Transposição por Espiral Interna") |
 |-|
@@ -93,7 +92,7 @@ Significa dispor um texto em uma matriz formando alguma forma geométrica. Por e
 
 ## Ziguezague
 
-[Veja com mais detalhes essa transposição](https://github.com/DavidGomesh/cryptography-with-geometric-transpositions/blob/master/documentation/zigzag.md "Transposição em Ziguezague")
+[Veja com mais detalhes essa transposição](https://github.com/DavidGomesh/cryptography-with-geometric-transpositions/blob/master/documentation/zigzag.md)
 
 | ![Demostração do Funcionamento da Transposição em Ziguezague](https://user-images.githubusercontent.com/65545355/89907234-ca285280-dbc2-11ea-8cf6-d19cd6c1e6f8.gif "Demostração do Funcionamento da Transposição em Ziguezague") |
 |-|
@@ -101,20 +100,38 @@ Significa dispor um texto em uma matriz formando alguma forma geométrica. Por e
 
 ## Padrão 'L'
 
-[Veja com mais detalhes essa transposição](https://github.com/DavidGomesh/cryptography-with-geometric-transpositions/blob/master/documentation/l-pattern.md "Transposição com o Padrão 'L'")
+[Veja com mais detalhes essa transposição](https://github.com/DavidGomesh/cryptography-with-geometric-transpositions/blob/master/documentation/l-pattern.md)
 
 | ![Demostração do Funcionamento da Transposição com o padrão "L"](https://user-images.githubusercontent.com/65545355/89947215-7a657d80-dbfa-11ea-8e7b-430d05d611c5.gif "Demostração do Funcionamento da Transposição com o padrão 'L'") |
 |-|
 | *Demostração do Funcionamento da Transposição com o padrão "L"* |
 
+## Resultados com o mesmo texto
+
+**Texto Original:** Só sua mente é infinita.
+
+**Texto Processado:** sosuamenteeinfinita
+
+Transposição | Criptografado | Observações
+-:|:-|:-:
+Colunar Simples | satniomeftseeiaunin | 5 colunas
+Linear Simples | smenoeiisnntutfaaei | 4 linhas
+Linear com Chave Numérica | omeftuninsatniseeia | Chave: math
+Transposição por Itinerário | satnioumneifntseeia | 3 linhas
+Triangular | ietaeaomissenunftin | -
+Espiral Externo | sfonisinueaiaetmten | -
+Espiral Interno | itnaaimufessnnoitee | -
+Ziguezague | sntnioeeitsmefauain | -
+Padrão 'L' | usaoimsneefneniitta | -
+
 ## Referências Bibliográficas
 
 FERREIRA, Marcelo Zochio. Introdução à Criptografia. 1ª edição. São Paulo, SP. Novatec, 2016.
 
-SILVA, Luiz Paulo Moreira. "O que é anagrama?"; Brasil Escola. Disponível em: https://brasilescola.uol.com.br/o-que-e/matematica/o-que-e-anagrama.htm. Acesso em 27 de julho de 2020.
+SILVA, Luiz Paulo Moreira. "O que é anagrama?"; Brasil Escola. Disponível em: <https://brasilescola.uol.com.br/o-que-e/matematica/o-que-e-anagrama.htm>. Acesso em 27 de julho de 2020.
 
-YouTube. "Anagram Solving Algorithm". Disponível em: (https://youtu.be/lVGNs-DAzfc?list=LLrOluNfP46HBUYbbucTNcPQ)
+YouTube. "Anagram Solving Algorithm". Disponível em: (<https://youtu.be/lVGNs-DAzfc?list=LLrOluNfP46HBUYbbucTNcPQ>)
 
-Wikipedia. "Frequência de letras". Disponível em: (https://pt.wikipedia.org/wiki/Frequ%C3%AAncia_de_letras)
+Wikipedia. "Frequência de letras". Disponível em: (<https://pt.wikipedia.org/wiki/Frequ%C3%AAncia_de_letras>)
 
-Aldeia Numaboa. "Frequência de ocorrência de letras no Português". Dispoível em: (http://www.numaboa.com.br/criptografia/criptoanalise/310-Frequencia-no-Portugues)
+Aldeia Numaboa. "Frequência de ocorrência de letras no Português". Dispoível em: (<http://www.numaboa.com.br/criptografia/criptoanalise/310-Frequencia-no-Portugues>)
