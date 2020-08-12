@@ -130,7 +130,7 @@ FERREIRA, Marcelo Zochio. Introdução à Criptografia. 1ª edição. São Paulo
 
 SILVA, Luiz Paulo Moreira. "O que é anagrama?"; Brasil Escola. Disponível em: <https://brasilescola.uol.com.br/o-que-e/matematica/o-que-e-anagrama.htm>. Acesso em 27 de julho de 2020.
 
-YouTube. "Anagram Solving Algorithm". Disponível em: (<https://youtu.be/lVGNs-DAzfc?list=LLrOluNfP46HBUYbbucTNcPQ>)
+YouTube. "Anagram Solving Algorithm". Disponível em: (<https://youtu.be/lVGNs-DAzfc>)
 
 Wikipedia. "Frequência de letras". Disponível em: (<https://pt.wikipedia.org/wiki/Frequ%C3%AAncia_de_letras>)
 
