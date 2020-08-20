@@ -207,3 +207,4 @@ y = -134 / 121
 Z = -166 / 90
 z = -133 / 122
 
+AaÄäÅåÁáÂâÀàÃãBbCcÇçDdEeÉéÊêËëÈèFfGgHhIiÍíÎîÏïÌìıJjKkLlMmNnÑñOoÖöÓóÔôÒòÕõPpQqRrSsTtUuÜüÚúÛûÙùVvWwXxYyÝýÿZz
