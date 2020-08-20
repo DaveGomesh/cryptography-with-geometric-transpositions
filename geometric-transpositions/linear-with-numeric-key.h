@@ -13,37 +13,9 @@
  * ----------------------------------------------------------------
 */
 
-/**================================================================
- * ----------------------------------------------------------------
- * WELCOME TO DOCUMENTATION!
- * ----------------------------------------------------------------
- * Columnar with Numeric Key Transposition:
- * -> Input: Linear
- * -> Output: Columnar based on key
- *   -> Example: KEY = PIZZA
- *      P = 3
- *      I = 2
- *      Z = 4
- *      Z = 5
- *      A = 1
- *   -> Result: 3, 2, 4, 5, 1
- *   -> This is the output order!
- * 
- * -> Obs. 1: The length of key is the number of columns.
- * -> Obs. 2: The user will inform the key.
- * ----------------------------------------------------------------
- * @author David Gomesh
- * GitHub: DavidGomesh
- * Instagram: @david_gomesh
- * E-mail: david.gomes@acad.ifma.edu.br
- * ----------------------------------------------------------------
- * *** The file is in UTF-8 codification! ***
- * ----------------------------------------------------------------
-*///===============================================================
-
 #include <string.h>
 
-void columnarWithNumericKey(char text[], char key[]){
+void linearWithNumericKey(char text[], char key[]){
     int lengthText = strlen(text), lengthKey = strlen(key);
     int order[lengthKey];
     char auxiliaryText[lengthText];

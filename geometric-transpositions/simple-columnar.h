@@ -1,11 +1,11 @@
-#ifndef SIMPLE_COLUMNAR_H_INCLUDED
-#define SIMPLE_COLUMNAR_H_INCLUDED
+#ifndef SIMPLE_LINEAR_H_INCLUDED
+#define SIMPLE_LINEAR_H_INCLUDED
 
 /**
  * ----------------------------------------------------------------
  * WELCOME TO GEOMETRIC TRANSPOSITIONS!
  * ----------------------------------------------------------------
- * Simple Columnar Transposition
+ * Simple Linear Transposition
  * ----------------------------------------------------------------
  * @author David Gomesh
  * ----------------------------------------------------------------
@@ -20,7 +20,7 @@ void simpleColumnar(char text[], int columnsCount){
     char auxiliaryText[lengthText];
     int linesCount;
 
-    //Calculate the Matrix Size
+    //Calculate Matrix Size
     if(lengthText % columnsCount == 0){
         linesCount = lengthText / columnsCount;
     }else{
@@ -30,8 +30,8 @@ void simpleColumnar(char text[], int columnsCount){
     char matrix[linesCount][columnsCount];
 
     //Input
-    for(int i=0, k=0; i<linesCount; i++){
-        for(int j=0; j<columnsCount; j++){
+    for(int j=0, k=0; j<columnsCount; j++){
+        for(int i=0; i<linesCount; i++){
             if(k < lengthText){
                 matrix[i][j] = text[k++];
             }else{
@@ -42,18 +42,18 @@ void simpleColumnar(char text[], int columnsCount){
 
     //Output
     int k=0;
-    for(int j=0; j<columnsCount; j++){
-        for(int i=0; i<linesCount; i++){
+    for(int i=0; i<linesCount; i++){
+        for(int j=0; j<columnsCount; j++){
             if(matrix[i][j] != '-'){
-                auxiliaryText[k++] = matrix[i][j];                
+                auxiliaryText[k++] = matrix[i][j];
             }
         }
     }
-    
+
     //Return
     auxiliaryText[k] = '\0';
 
     strcpy(text, auxiliaryText);
 }
 
-#endif /* SIMPLE_COLUMNAR_H_INCLUDED */
+#endif /* SIMPLE_LINEAR_H_INCLUDED */

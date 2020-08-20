@@ -41,24 +41,40 @@ void decryptSimpleColumnar(char encryptedText[], int columnsCount){
     }
 
     //Input
-    int k=0;
-    for(int j=0; j<columnsCount; j++){
-        for(int i=0; i<linesCount; i++){
+    for(int i=0, k=0; i<linesCount; i++){
+        for(int j=0; j<columnsCount; j++){
             if(k < lengthText && matrix[i][j] != '-'){
                 matrix[i][j] = encryptedText[k++];
             }
         }
     }
 
+    // for(int j=0; j<columnsCount; j++){
+    //     for(int i=0; i<linesCount; i++){
+    //         if(k < lengthText && matrix[i][j] != '-'){
+    //             matrix[i][j] = encryptedText[k++];
+    //         }
+    //     }
+    // }
+
     
     //Output
-    for(int i=0, k=0; i<linesCount; i++){
-        for(int j=0; j<columnsCount; j++){
+    int k=0;
+    for(int j=0; j<columnsCount; j++){
+        for(int i=0; i<linesCount; i++){
             if(matrix[i][j] != '-'){
                 auxiliaryText[k++] = matrix[i][j];                
             }
         }
     }
+
+    // for(int i=0, k=0; i<linesCount; i++){
+    //     for(int j=0; j<columnsCount; j++){
+    //         if(matrix[i][j] != '-'){
+    //             auxiliaryText[k++] = matrix[i][j];                
+    //         }
+    //     }
+    // }
 
     //Return
     auxiliaryText[k] = '\0';

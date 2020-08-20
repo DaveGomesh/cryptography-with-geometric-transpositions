@@ -1,5 +1,5 @@
-#ifndef L_PATTERN_H_INCLUDED
-#define L_PATTERN_H_INCLUDED
+#ifndef DECRYPT_L_PATTERN_H_INCLUDED
+#define DECRYPT_L_PATTERN_H_INCLUDED
 
 /**
  * ----------------------------------------------------------------
@@ -109,74 +109,24 @@ void decryptLPattern(char encryptedText[]){
     i = 0;
     j = 0;
     k = 0;
-    state = 'r'; //u = up, r = right, d = down, l = left
-
-    // The first position is the limit in the up, and the second position is the limit in the bottom
-    int outputVerticalLimit[2] = {1, linesCount-1};
-    // The first position is the limit in the left, and the second position is the limit in the right
-    int outputHorizontalLimit[2] = {0, columnsCount-1};
-    
+    int currentLine = linesCount-1, currentColumn = 1;
     while(k<lengthText){
-        switch(state){
-            case 'r':
-                while(j<=outputHorizontalLimit[1] && k<lengthText){
-                    if(matrix[i][j] != '-'){
-                        matrix[i][j++] = encryptedText[k++];
-                    }
-                    else{
-                        j++;
-                    }
+        
+        if(currentLine >= 0){
+            for(i=currentLine, j=0; i<linesCount && j < columnsCount; i++, j++){
+                if(matrix[i][j] != '-'){
+                    matrix[i][j] = encryptedText[k++];
                 }
-                j--;
-                i++;
-                outputHorizontalLimit[1]--;
-                state = 'd';
-                break;
-            
-            case 'd':
-                while(i<=outputVerticalLimit[1] && k<lengthText){
-                    if(matrix[i][j] != '-'){
-                        matrix[i++][j] = encryptedText[k++];
-                    }
-                    else{
-                        i++;
-                    }
+            }
+            currentLine--;
+        }
+        else{
+            for(i=0, j=currentColumn; j<columnsCount; i++, j++){
+                if(matrix[i][j] != '-'){
+                    matrix[i][j] = encryptedText[k++];
                 }
-                i--;
-                j--;
-                outputVerticalLimit[1]--;
-                state = 'l';
-                break;
-            
-            case 'l':
-                while(j>=outputHorizontalLimit[0] && k<lengthText){
-                    if(matrix[i][j] != '-'){
-                        matrix[i][j--] = encryptedText[k++];
-                    }
-                    else{
-                        j--;
-                    }
-                }
-                j++;
-                i--;
-                outputHorizontalLimit[0]++;
-                state = 'u';
-                break;
-
-            case 'u':
-                while(i>=outputVerticalLimit[0] && k<lengthText){
-                    if(matrix[i][j] != '-'){
-                        matrix[i--][j] = encryptedText[k++];
-                    }
-                    else{
-                        i--;
-                    }
-                }
-                i++;
-                j++;
-                outputVerticalLimit[0]++;
-                state = 'r';
-                break;
+            }
+            currentColumn++;
         }
     }
 
@@ -253,4 +203,4 @@ void decryptLPattern(char encryptedText[]){
     strcpy(encryptedText, auxiliaryText);
 }
 
-#endif /* L_PATTERN_H_INCLUDED */
+#endif /* DECRYPT_L_PATTERN_H_INCLUDED */

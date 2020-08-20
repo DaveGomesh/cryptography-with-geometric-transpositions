@@ -21,12 +21,12 @@ void triangular(char text[]){
 
     int linesCount=1, columnsCount;
 
-    int maxCharMatrix=1;
+    int maxCharPyramid=1;
     int maxCharLastLine=1;
 
-    while(maxCharMatrix < lengthText){
+    while(maxCharPyramid < lengthText){
         maxCharLastLine+=2;
-        maxCharMatrix+=maxCharLastLine;
+        maxCharPyramid+=maxCharLastLine;
         linesCount++;
     }
 

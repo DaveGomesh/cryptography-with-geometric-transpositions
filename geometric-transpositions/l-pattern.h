@@ -128,13 +128,6 @@ void lPattern(char text[]){
     auxiliaryText[k] = '\0';
 
     strcpy(text, auxiliaryText);
-    
-    for(int i=0; i<linesCount; i++){
-        for(int j=0; j<columnsCount; j++){
-            printf("%c ", matrix[i][j]);
-        }
-        printf("\n");
-    }
 }
 
 #endif /* L_PATTERN_H_INCLUDED */

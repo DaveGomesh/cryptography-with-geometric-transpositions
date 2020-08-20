@@ -15,7 +15,7 @@
 
 #include <string.h>
 
-void decryptColumnarWithNumericKey(char encryptedText[], char key[]){
+void decryptLinearWithNumericKey(char encryptedText[], char key[]){
     int lengthText = strlen(encryptedText), lengthKey = strlen(key);
     int order[lengthKey];
     char auxiliaryText[lengthText];
