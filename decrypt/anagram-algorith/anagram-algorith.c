@@ -2,6 +2,7 @@
 #include <string.h>
 #include "string-processings/remove-invalid-characters.h"
 #include <stdlib.h>
+#include <stdbool.h>
 
 double quantAnagrams=0;
 

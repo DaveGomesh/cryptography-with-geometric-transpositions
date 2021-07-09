@@ -19,7 +19,7 @@ Significa dispor um texto em uma matriz formando alguma forma geométrica. Por e
 
 ## Quais transposições existem no Projeto?
 
-- [Colunar Simples](#columnar-simples)
+- [Colunar Simples](#colunar-simples)
 - [Linear Simples](#linear-simples)
 - [Linear com Chave Numérica](#linear-com-chave-numérica)
 - [Transposição por Itinerário](#transposição-por-itinerário)
